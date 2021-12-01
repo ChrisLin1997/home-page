@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import wrapperBG from '../images/wrapper.jpeg'
-import GoogleSearch from './google-search'
+import NavMenu from './nav-menu'
+import Apps from './apps'
+
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,11 +15,10 @@ const Wrapper = styled.div`
 `
 
 const App = () => {
-
   return (
     <Wrapper className="app">
-      <GoogleSearch />
-
+      <NavMenu />
+      <Apps />
     </Wrapper>
   )
 }
