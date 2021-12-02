@@ -25,16 +25,6 @@ const Main = styled.main`
   align-items: center;
 `
 
-const Title = styled.div`
-  margin: 24px auto;
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 2px #191919;
-  user-select: none;
-`
-
 const Section = styled.section`
   margin-bottom: 8px;
   display: flex;
@@ -43,7 +33,7 @@ const Section = styled.section`
 `
 
 const AppItem = styled.a`
-  margin: 0 16px;
+  margin: 0 8px;
   padding: 12px;
   width: 92px;
   height: 82px;
@@ -87,14 +77,6 @@ const Apps = () => {
     { label: 'TradingView', icon: TradingView, url: 'https://tw.tradingview.com/' },
   ]
 
-  const defiList = [
-    { label: 'TradingView', icon: TradingView, url: 'https://tw.tradingview.com/' },
-    { label: 'MarketCap', icon: CoinMarketCap, url: 'https://coinmarketcap.com/zh-tw/' },
-    { label: 'Francium', icon: Francium, url: 'https://francium.io/app/mypage' },
-    { label: 'Raydium', icon: Raydium, url: 'https://raydium.io/swap/' },
-    { label: 'Solanium', icon: Solanium, url: 'https://www.solanium.io/' },
-  ]
-
   const engineerList = [
     { label: 'Youtube', icon: Youtube, url: 'https://www.youtube.com/' },
     { label: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/' },
@@ -110,11 +92,10 @@ const Apps = () => {
 
   return (
     <Main>
-      <Title>Hi Chris Lin</Title>
       <Section>
         { exchangeList.map(item => {
           return (
-            <AppItem href={item.url}>
+            <AppItem key={item.label} href={item.url}>
               <img src={item.icon} />
               <div>{item.label}</div>
             </AppItem>
@@ -125,7 +106,7 @@ const Apps = () => {
       <Section>
         { engineerList.map(item => {
           return (
-            <AppItem href={item.url}>
+            <AppItem key={item.label} href={item.url}>
               <img src={item.icon} />
               <div>{item.label}</div>
             </AppItem>

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import wrapperBG from '../images/wrapper.jpeg'
-import NavMenu from './nav-menu'
+import Header from './header'
 import Apps from './apps'
 
 
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const App = () => {
   return (
     <Wrapper className="app">
-      <NavMenu />
+      <Header />
       <Apps />
     </Wrapper>
   )

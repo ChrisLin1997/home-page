@@ -1,12 +1,27 @@
 import { KeyboardEvent } from 'react'
 import styled from 'styled-components'
 
-const NavContent = styled.div`
+const HeaderContent = styled.div`
+  position: relative;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+`
+
+const Title = styled.div`
+  margin: auto;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 2px #191919;
+  user-select: none;
+`
+
+const Nav = styled.div`
   position: absolute;
   top: 24px;
   right: 24px;
-  display: flex;
-  align-items: center;
 `
 
 const Link = styled.a`
@@ -19,14 +34,18 @@ const Link = styled.a`
   }
 `
 
-const NavMenu = () => {
+const Header = () => {
   return (
-    <NavContent>
-      <Link href="https://mail.google.com/">信箱</Link>
-      <Link href="https://www.google.com.tw/maps">地圖</Link>
-      <Link href="https://meet.google.com/osp-jkdt-gfu">Meet</Link>
-      <GoogleSearch />
-    </NavContent>
+    <HeaderContent>
+      <Title>Hi Chris Lin</Title>
+
+      <Nav>
+        <Link href="https://mail.google.com/">信箱</Link>
+        <Link href="https://www.google.com.tw/maps">地圖</Link>
+        <Link href="https://meet.google.com/osp-jkdt-gfu">Meet</Link>
+        <GoogleSearch />
+      </Nav>
+    </HeaderContent>
   )
 }
 
@@ -50,4 +69,4 @@ const GoogleSearch = () => {
   return <SearchInput placeholder="搜尋 Google" onKeyDown={handleKeyDown} />
 }
 
-export default NavMenu
+export default Header
