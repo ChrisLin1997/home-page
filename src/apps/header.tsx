@@ -2,8 +2,8 @@ import { KeyboardEvent } from 'react'
 import styled from 'styled-components'
 
 const HeaderContent = styled.div`
+  margin-bottom: 42px;
   position: relative;
-  padding: 24px;
   display: flex;
   align-items: center;
 `
@@ -20,8 +20,8 @@ const Title = styled.div`
 
 const Nav = styled.div`
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 0;
+  right: 0;
 `
 
 const Link = styled.a`

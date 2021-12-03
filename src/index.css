@@ -5,8 +5,13 @@
 
 body {
   margin: 0;
-  min-width: 1160px;
+  min-width: 1208px;
   width: 100vw;
   height: 100vh;
+  background-color: #03050b;
+  background-image: url('./images/wrapper.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100%;
 }
 

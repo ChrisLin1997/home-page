@@ -20,6 +20,8 @@ import Twitch from '../images/twitch.png'
 import Medium from '../images/medium.png'
 
 const Main = styled.main`
+  margin: 0 auto 64px;
+  width: 1160px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +35,7 @@ const Section = styled.section`
 `
 
 const AppItem = styled.a`
-  margin: 0 8px;
+  margin: 0 12px;
   padding: 12px;
   width: 92px;
   height: 82px;
