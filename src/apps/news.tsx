@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const API_KEY = '00942a082b944507982c1e8c2cbba299'
+const API_TOKEN = 'b59f562da5497d300e7edef0d1f4a556'
 
 const NewCard = styled.div`
   padding: 12px;
-  width: 360px;
+  width: 420px;
   height: fit-content;
   overflow: auto;
   border-radius: 8px;
@@ -34,9 +34,9 @@ const News = () => {
     getNews()
 
     function getNews () {
-      fetch(`https://newsapi.org/v2/top-headlines?country=tw&apiKey=${API_KEY}`)
+      fetch(`https://gnews.io/api/v4/search?q=加密貨幣&country=tw&token=${API_TOKEN}`)
         .then(res => res.json())
-        .then(res => { setNewList(res.articles.slice(0, 10)) })
+        .then(res => { setNewList(res.articles) })
     }
   }, [])
 
