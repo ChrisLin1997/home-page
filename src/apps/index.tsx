@@ -3,6 +3,7 @@ import wrapperBG from '../images/wrapper.jpeg'
 import Header from './header'
 import Apps from './apps'
 import News from './news'
+import CryptoPrice from './crypto-price'
 
 const Wrapper = styled.div`
   padding: 24px;
@@ -15,13 +16,24 @@ const Wrapper = styled.div`
   background-position: 50%;
 `
 
+const Content = styled.div`
+  margin: auto;
+  width: 1160px;
+  display: flex;
+  justify-content: space-between;
+`
+
 const App = () => {
   return (
     <Wrapper className="app">
       <Header />
       <Apps />
 
-      <News />
+      <Content>
+        <CryptoPrice />
+
+        <News />
+      </Content>
     </Wrapper>
   )
 }

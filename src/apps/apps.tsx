@@ -95,14 +95,12 @@ const Apps = () => {
   return (
     <Main>
       <Section>
-        { exchangeList.map(item => {
-          return (
-            <AppItem key={item.label} href={item.url}>
-              <img src={item.icon} />
-              <div>{item.label}</div>
-            </AppItem>
-          )
-        }) }
+        { exchangeList.map(item => (
+          <AppItem key={item.label} href={item.url}>
+            <img src={item.icon} />
+            <div>{item.label}</div>
+          </AppItem>
+        ))}
       </Section>
 
       <Section>
