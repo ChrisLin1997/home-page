@@ -65,8 +65,6 @@ const AppItem = styled.a`
   }
 `
 
-
-
 const Apps = () => {
   const appList = [
     { label: 'Binance', icon: Binance, url: 'https://www.binance.com/zh-TW' },
@@ -81,8 +79,8 @@ const Apps = () => {
     { label: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/' },
     { label: 'Linkedin', icon: Linkedin, url: 'https://www.linkedin.com/feed/' },
     { label: 'Twitch', icon: Twitch, url: 'https://www.twitch.tv/directory/all' },
-    { label: 'Medium', icon: Medium, url: 'https://medium.com/' },
     { label: 'Trello', icon: Trello, url: 'https://trello.com/b/2ebe3mcu/chris-lin-%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85' },
+    { label: 'Medium', icon: Medium, url: 'https://medium.com/' },
     { label: 'GitHub', icon: Github, url: 'https://github.com/ChrisLin1997' },
     { label: 'HackMD', icon: Hackmd, url: 'https://hackmd.io/?nav=overview' },
     { label: 'LeetCode', icon: Leetcode, url: 'https://leetcode.com/problemset/all/' },

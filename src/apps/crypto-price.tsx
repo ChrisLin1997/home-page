@@ -65,8 +65,8 @@ const CryptoItem = styled.div`
   }
 `
 
-const cryptoList = ['BTC', 'ETH', 'BNB', 'SOL', 'LUNA', 'ALGO', 'ATOM']
-const imgList = [btc, eth, bnb, sol, luna, algo, atom]
+const cryptoList = ['BTC', 'ETH', 'BNB', 'SOL', 'ATOM', 'LUNA', 'ALGO']
+const imgList = [btc, eth, bnb, sol, atom, luna, algo]
 
 let cryptoPriceMap = JSON.parse(localStorage.getItem('cryptoPriceMap') || '{}')
 const webSocket = new WebSocket('wss://chris-binance.herokuapp.com')
