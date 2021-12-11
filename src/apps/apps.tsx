@@ -85,8 +85,8 @@ const Apps = () => {
     { label: 'Trello', icon: Trello, url: 'https://trello.com/b/2ebe3mcu/chris-lin-%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85' },
     { label: 'GitHub', icon: Github, url: 'https://github.com/ChrisLin1997' },
     { label: 'HackMD', icon: Hackmd, url: 'https://hackmd.io/?nav=overview' },
-    // { label: 'LeetCode', icon: Leetcode, url: 'https://leetcode.com/problemset/all/' },
-    // { label: '掘金', icon: Juejin, url: 'https://juejin.cn/recommended' },
+    { label: 'LeetCode', icon: Leetcode, url: 'https://leetcode.com/problemset/all/' },
+    { label: '掘金', icon: Juejin, url: 'https://juejin.cn/recommended' },
   ]
 
   return (

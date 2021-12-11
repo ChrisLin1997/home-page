@@ -59,14 +59,14 @@ const NewsContent = styled.div`
 const News = () => {
   const [newList, setNewList] = useState([])
 
-  useEffect(() => {
-    getNews()
+  const getNewsApi = () => {
+    fetch(`https://gnews.io/api/v4/search?q=加密貨幣&country=tw&token=${API_TOKEN}`)
+      .then(res => res.json())
+      .then(res => { setNewList(res.articles.slice(0, 6)) })
+  }
 
-    function getNews () {
-      fetch(`https://gnews.io/api/v4/search?q=加密貨幣&country=tw&token=${API_TOKEN}`)
-        .then(res => res.json())
-        .then(res => { setNewList(res.articles.slice(0, 6)) })
-    }
+  useEffect(() => {
+    getNewsApi()
   }, [])
 
   return (
