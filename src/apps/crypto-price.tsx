@@ -68,33 +68,35 @@ const CryptoItem = styled.div`
 const cryptoList = ['BTC', 'ETH', 'BNB', 'SOL', 'LUNA', 'ALGO', 'ATOM']
 const imgList = [btc, eth, bnb, sol, luna, algo, atom]
 
-let cryptoPriceMap = {}
+let cryptoPriceMap = JSON.parse(localStorage.getItem('cryptoPriceMap') || '{}')
 const webSocket = new WebSocket('wss://chris-binance.herokuapp.com')
 
-  webSocket.onmessage = event => {
-    const data = JSON.parse(event.data)
+webSocket.onmessage = event => {
+  const data = JSON.parse(event.data)
 
-    const result = { ...cryptoPriceMap } as any
-    cryptoList.forEach(item => {
-      const key = item + 'USDT'
-      
-      if (data[key]) {
-        const isUp = data[key].close >= data[key].open
+  const result = { ...cryptoPriceMap } as any
+  cryptoList.forEach(item => {
+    const key = item + 'USDT'
+    
+    if (data[key]) {
+      const isUp = data[key].close >= data[key].open
 
-        result[item] = {
-          name: item,
-          price: `$ ${Number(data[key].close).toFixed(2)}`,
-          change: `${isUp ? '+' : ''}${(data[key].close - data[key].open).toFixed(2)}`,
-          percent: `${isUp ? '+' : ''}${((data[key].close - data[key].open) / data[key].open * 100).toFixed(2)} %`,
-          isUp: isUp,
-        }
+      result[item] = {
+        name: item,
+        price: `$ ${Number(data[key].close).toFixed(2)}`,
+        change: `${isUp ? '+' : ''}${(data[key].close - data[key].open).toFixed(2)}`,
+        percent: `${isUp ? '+' : ''}${((data[key].close - data[key].open) / data[key].open * 100).toFixed(2)} %`,
+        isUp: isUp,
       }
-    })
-    cryptoPriceMap = result
-  }
+    }
+  })
+
+  localStorage.setItem('cryptoPriceMap', JSON.stringify(result))
+  cryptoPriceMap = result
+}
 
 const CryptoPrice = () => {
-  const [cryptoMap, setCryptoMap] = useState<any>({})
+  const [cryptoMap, setCryptoMap] = useState<any>(cryptoPriceMap)
 
   useEffect(() => {
     const timer = setInterval(() => {
