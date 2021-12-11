@@ -9,22 +9,39 @@ import algo from '../images/algo.png'
 import atom from '../images/atom.png'
 
 const PriceCard = styled.div`
-  padding: 0 12px;
-  width: 700px;
+  padding: 12px;
   height: fit-content;
-  background-color: #1e2126;
-  border-radius: 8px;
+`
+
+const TitleWrap = styled.div`
+  margin-bottom: 12px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+`
+
+const Title = styled.span`
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+`
+
+const More = styled.span`
+  color: #848E9C;
+  font-size: 14px;
 `
 
 const CryptoItem = styled.div`
   padding: 12px;
   display: flex;
-  align-items: center;
   height: 60px;
+  align-items: center;
   font-weight: bold;
+  border-radius: 8px;
 
-  &:not(:last-child){
-    border-bottom: 1px solid white;
+  &:hover {
+    background-color: #2b3139;
   }
 
   & > *:nth-child(1) {
@@ -88,11 +105,16 @@ const CryptoPrice = () => {
 
   return (
     <PriceCard>
+
+      <TitleWrap>
+        <Title>Market</Title>
+        <More>more</More>
+      </TitleWrap>
       { cryptoList.map((item, index) => (
         <CryptoItem key={item} style={{ color: 'white' }}>
           <img src={imgList[index]}  />
           <span>{ item }</span> &nbsp;
-          <span style={{ color: cryptoMap[item]?.isUp === false ? '#f6465d' : '#0caa6e' }}>{ cryptoMap[item]?.price || '--' }</span> &nbsp;
+          <span>{ cryptoMap[item]?.price || '--' }</span> &nbsp;
           <span style={{ color: cryptoMap[item]?.isUp === false ? '#f6465d' : '#0caa6e' }}>{ cryptoMap[item]?.change || '--' }</span> &nbsp;
           <span style={{ color: cryptoMap[item]?.isUp === false ? '#f6465d' : '#0caa6e' }}>{ cryptoMap[item]?.percent || '--' }</span> &nbsp;
         </CryptoItem>

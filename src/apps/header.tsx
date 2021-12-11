@@ -2,10 +2,12 @@ import { KeyboardEvent } from 'react'
 import styled from 'styled-components'
 
 const HeaderContent = styled.div`
-  margin-bottom: 42px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
   position: relative;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #2f2f3d;
 `
 
 const Title = styled.div`
@@ -20,8 +22,8 @@ const Title = styled.div`
 
 const Nav = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 18px;
+  right: 24px;
 `
 
 const Link = styled.a`
@@ -52,7 +54,7 @@ const Header = () => {
 const SearchInput = styled.input`
   padding: 12px 24px;
   width: 200px;
-  height: 40px;
+  height: 32px;
   border: 0;
   border-radius: 24px;
   font-size: 16px;
