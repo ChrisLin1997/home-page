@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import Header from './header'
 import Apps from './apps'
 import CryptoPrice from './crypto-price'
-import News from './news'
+import Calendar from './calendar'
 import Weather from './weather'
+import News from './news'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -39,6 +40,7 @@ const App = () => {
         </LeftWrap>
 
         <RightWrap>
+          <Calendar />
           <Weather />
           <News />
         </RightWrap>

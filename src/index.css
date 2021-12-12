@@ -2,6 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'IBM Plex Sans', sans-serif;
+  user-select: none;
 }
 
 body {

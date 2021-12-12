@@ -1,7 +1,6 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './apps'
+import './index.css'
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => { 
@@ -11,9 +10,4 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))
