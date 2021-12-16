@@ -5,7 +5,6 @@ import eth from '../images/eth.png'
 import bnb from '../images/bnb.png'
 import sol from '../images/sol.png'
 import luna from '../images/luna.png'
-import algo from '../images/algo.png'
 import atom from '../images/atom.png'
 
 const PriceCard = styled.div`
@@ -65,8 +64,8 @@ const CryptoItem = styled.div`
   }
 `
 
-const cryptoList = ['BTC', 'ETH', 'BNB', 'SOL', 'ATOM', 'LUNA', 'ALGO']
-const imgList = [btc, eth, bnb, sol, atom, luna, algo]
+const cryptoList = ['BTC', 'ETH', 'BNB', 'SOL', 'ATOM', 'LUNA']
+const imgList = [btc, eth, bnb, sol, atom, luna]
 
 let cryptoPriceMap = JSON.parse(localStorage.getItem('cryptoPriceMap') || '{}')
 const webSocket = new WebSocket('wss://chris-binance.herokuapp.com')
